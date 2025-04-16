@@ -4,7 +4,7 @@ import {AiFillDelete} from "react-icons/ai";
 const buttonStyle = "px-5 py-2 bg-gray-200 active:bg-gray-300  rounded-lg ";
 const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
     return (
-        <div className="bg-white flex items-center justify-between p-4 border-b border-gray-300">
+        <div className="bg-white flex flex-col sm:flex-row items-center justify-between p-4 border-b border-gray-300">
             <div className="flex items-center">
                 <img
                     src={item.image}
@@ -16,7 +16,7 @@ const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
                     <p className="text-gray-600">${item.price.toFixed(2)}</p>
                 </div>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex mt-4 sm:mt-0 items-center gap-2">
                 <button
                     onClick={() => onUpdateQuantity(item.id, item.quantity - 1)}
                     className={buttonStyle}

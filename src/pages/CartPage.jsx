@@ -39,14 +39,14 @@ const CartPage = () => {
                     <div className="w-full h-1 bg-gray-300 mt-8"></div>
 
                     <div className="bg-white p-4 mt-5 border-2 border-gray-200 rounded-lg shadow-md">
-                        <div className="flex justify-between items-center">
+                        <div className="flex sm:flex-row flex-col justify-between items-center">
                             <div>
                                 <p className="font-semibold">Total Items: {itemCount}</p>
                                 <p className="text-xl font-bold">Total: ${total.toFixed(2)}</p>
                             </div>
                             <Link
                                 to="/checkout"
-                                className="bg-orange-500 text-white px-6 py-2 rounded hover:bg-orange-600 transition"
+                                className="bg-orange-500 mt-4 sm:mt-0 text-white px-6 py-2 rounded hover:bg-orange-600 transition"
                             >
                                 Proceed to Checkout
                             </Link>

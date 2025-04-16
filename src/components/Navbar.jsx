@@ -8,7 +8,7 @@ const Navbar = () => {
     const { itemCount } = useCart()
 
     return (
-        <nav className="bg-blue-500 w-screen h-20 flex shadow-md px-7">
+        <nav className="fixed top-0 z-34 bg-blue-500 w-screen h-20 flex shadow-md px-7">
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
                 <Link to="/" className="text-xl text-white font-bold">
                     ShopCart
