@@ -18,7 +18,7 @@ const CheckoutForm = ({ cart, total, onPlaceOrder }) => {
     }
 
     return (
-        <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-md">
+        <div className="max-w-md mt-20 mx-auto bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-2xl font-bold mb-6">Checkout</h2>
 
             <form onSubmit={handleSubmit}>

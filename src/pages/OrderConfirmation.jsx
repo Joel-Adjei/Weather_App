@@ -2,7 +2,7 @@ import { Link } from 'react-router'
 
 const OrderConfirmation = () => {
     return (
-        <div className="text-center">
+        <div className="text-center mt-20">
             <div className="bg-white rounded-lg shadow-md p-8 max-w-md mx-auto">
                 <svg
                     className="w-16 h-16 text-green-500 mx-auto mb-4"
