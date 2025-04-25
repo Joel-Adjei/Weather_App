@@ -13,7 +13,7 @@ const Weather =()=>{
     return(
         <section className={"py-0"}>
             <Error />
-            {/*<NoInternet  />*/}
+            <NoInternet  />
             <div
                 className="container"
             >

@@ -4,6 +4,7 @@ import {cloudy, drizzle, heavyRain, mist, sun} from "../assets/constant";
 const WeatherContext = createContext();
 
 const apiKey = "29adf92449bf1424faa950f129ddfbf8"
+const key = "3b93086a858d42828f640629252204"
 
 const forcastEndpoint = "https://api.weatherapi.com/v1/forecast.json?key=3b93086a858d42828f640629252204&q=London&days=6&aqi=yes&alerts=no"
 const search = "https://api.weatherapi.com/v1/search.json?key=3b93086a858d42828f640629252204&q=London"
@@ -20,6 +21,7 @@ export const WeatherContextProvider =({children})=>{
     const [connection, setConnection] = useState({ message: "", display: false})
 
     const url =`https://api.openweathermap.org/data/2.5/weather?units=metric&q=${  inputValue === "" ? "London" : inputValue}&appid=${apiKey}`
+    const locationUrl = `https://api.weatherapi.com/v1/search.json?key=${key}&q=${  inputValue === "" ? "London" : inputValue}`
 
     useEffect(()=>{
         fetchWeather()
@@ -30,6 +32,17 @@ export const WeatherContextProvider =({children})=>{
         fetchWeather()
         setInputValue("")
     }
+
+    // async function fetchLocation(){
+    //     try{
+    //         const response = await fetch(locationUrl)
+    //         const data = await response.json()
+    //
+    //         console.log(data)
+    //     }catch (e) {
+    //         console.log("Error: ", e)
+    //     }
+    // }
 
     async function fetchWeather(){
         try{
@@ -67,7 +80,7 @@ export const WeatherContextProvider =({children})=>{
         }catch (e) {
             setConnection({message: "No internet" , display: true})
             console.log( "An Error ", e)
-            fetchWeather();
+            await fetchWeather();
         }
     }
 
