@@ -27,7 +27,7 @@ body{
     padding-inline: 15px;
     background: rgba(218, 226, 243, 0.59);
     border-radius: 50px;
-    padding: 10px 8px;
+    padding: 7px;
 }
 .input-container input{
     flex: 1;
@@ -44,6 +44,7 @@ body{
 
 /*Weather Info*/
 .weather-info{
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -77,6 +78,14 @@ body{
     background:linear-gradient(183deg, rgba(122, 34, 246, 0.6), #4569ec);
     /*backdrop-filter: opacity(20%);*/
     backdrop-filter: blur(44%);
-
     border-radius: 30px;
+}
+
+@media (max-width: 380px ) {
+    section{
+        padding: 0;
+    }
+    .container{
+        border-radius: 0;
+    }
 }

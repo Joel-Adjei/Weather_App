@@ -7,6 +7,7 @@ const SearchBar =()=>{
     return(
         <div className={"input-container"} >
             <input
+                className={"text-gray-700 text-2xl font-[Montserrat] font-medium"}
                 placeholder={"Search City"}
                 type={"text"}
                 value={inputValue}

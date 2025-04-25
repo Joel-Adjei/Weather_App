@@ -1,9 +1,12 @@
 import React, {createContext, useContext, useEffect, useState} from "react";
-import {cloudy, heavyRain, sun} from "../assets/constant";
+import {cloudy, drizzle, heavyRain, mist, sun} from "../assets/constant";
 
 const WeatherContext = createContext();
 
 const apiKey = "29adf92449bf1424faa950f129ddfbf8"
+
+const forcastEndpoint = "https://api.weatherapi.com/v1/forecast.json?key=3b93086a858d42828f640629252204&q=London&days=6&aqi=yes&alerts=no"
+const search = "https://api.weatherapi.com/v1/search.json?key=3b93086a858d42828f640629252204&q=London"
 
 export const WeatherContextProvider =({children})=>{
     const [inputValue , setInputValue] = useState("")
@@ -50,18 +53,21 @@ export const WeatherContextProvider =({children})=>{
             // setWindSpeed(data.wind.speed)
             if(data.weather[0].main === "Clouds"){
                 setImg(cloudy)
+            }else if(data.weather[0].main === "Rain"){
+                setImg(heavyRain);
             }else if(data.weather[0].main === "Clear"){
                 setImg(sun);
-            }else{
-                setImg(heavyRain);
+            }else if(data.weather[0].main === "Drizzle"){
+                setImg(drizzle);
+            }else if(data.weather[0].main === "Mist"){
+                setImg(mist);
             }
 
 
         }catch (e) {
-            // if(e === "Failed to fetch") {
-            //
-            // }
+            setConnection({message: "No internet" , display: true})
             console.log( "An Error ", e)
+            fetchWeather();
         }
     }
 

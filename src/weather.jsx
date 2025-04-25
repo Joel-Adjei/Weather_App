@@ -11,12 +11,11 @@ import NoInternet from "./components/NoInternet";
 const Weather =()=>{
     const {weatherData, img} = useWeather()
     return(
-        <section>
+        <section className={"py-0"}>
             <Error />
-            <NoInternet />
+            {/*<NoInternet  />*/}
             <div
                 className="container"
-                style={{}}
             >
                 <SearchBar />
 
